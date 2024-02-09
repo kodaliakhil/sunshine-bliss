@@ -3,14 +3,13 @@ function createCard(id, title, offer, subTitle, fPrice, oPrice) {
   const label = document.createElement("label");
   label.setAttribute("for", id);
   label.classList.add("unit-label-container");
-  
 
   // Create input element
   const input = document.createElement("input");
   input.id = id;
   input.type = "radio";
   input.classList.add("radio-input");
-  input.name="cards"
+  input.name = "cards";
 
   // Create outer div element
   const outerDiv = document.createElement("div");
@@ -79,9 +78,19 @@ function createCard(id, title, offer, subTitle, fPrice, oPrice) {
   label.appendChild(outerDiv);
   // Append label to a parent element in the DOM
   const parentElement = document.getElementById("cardsContainer"); // Replace "parentElementId" with the actual ID of the parent element
+
   parentElement.appendChild(label);
+//   label.addEventListener("click", (e) => {
+//     const selectedLabel = document.querySelectorAll(".unit-label-container")
+//     selectedLabel.forEach((label)=>{
+//         label.childNodes[0].id === e.target.id{
+
+//         }
+//     })
+//     console.log(selectedLabel)
+//   });
 }
 
 createCard("unit1Radio", "1 Unit", "10% Off", "Standard", "$10.00USD", "$24.00 USD");
 createCard("unit2Radio", "2 Unit", "20% Off", "", "$18.00 USD", "$24.00 USD");
-createCard("unit3Radio", "3 Unit", "30% Off", "", "24.00", "$24.00 USD");
+createCard("unit3Radio", "3 Unit", "30% Off", "", "$24.00 USD", "$24.00 USD");
